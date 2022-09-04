@@ -1,9 +1,10 @@
 import { injectJsError } from './lib/jsError';
 import { injectXHR } from './lib/xhr';
+import { blankScreen } from './lib/blankScreen';
 
 injectJsError();
 injectXHR();
-
+blankScreen();
 
 /**
  *  kind            监控指标大类

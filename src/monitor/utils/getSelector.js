@@ -6,7 +6,7 @@ function getSelector (path) {
     if (element.id) {
       return `${element.nodeName.toLowerCase()}#${element.id}`
     } else if (element.className && typeof element.className === 'string') {
-      return `${element.nodeName.toLowerCase()}#${element.className}`
+      return element.nodeName.toLowerCase() + "." + element.className.split(' ').filter(item => !!item).join('.');
     }
     return element.nodeName.toLowerCase();
   }).join(' ');

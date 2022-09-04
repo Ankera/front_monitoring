@@ -37,7 +37,9 @@
 <!-- end jsError PromiseError -->
 
 
-<body>
+<!-- start 测试监控 ajax 接口 -->
+
+<!-- <body>
   <div id="container">
     <div class="content">
       <input type="button" value="接口成功" onclick="sendSuccess()">
@@ -68,6 +70,30 @@
     }
     xhr.send("name=zf");
   }
+</script> -->
+<!-- start 测试监控 ajax 接口 -->
+
+<body>
+  <div id="container">
+    <div class="content">
+
+    </div>
+  </div>
+</body>
+<script>
+  const content = document.getElementsByClassName('content')[0];
+  content.innerHTML = `
+    <h1>
+      hello H1
+    </h1>
+    <h2 style="background-color: red">
+      hello H2
+    </h2>
+    <div>
+      hello 白屏检测
+    </div>
+  `.repeat(100);
+
 </script>
 
 </html>
