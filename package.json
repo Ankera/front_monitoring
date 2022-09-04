@@ -1,0 +1,30 @@
+{
+  "name": "front_monitoring",
+  "version": "1.0.0",
+  "description": "前端监控",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "dev": "webpack --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ankera/front_monitoring.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ankera/front_monitoring/issues"
+  },
+  "homepage": "https://github.com/Ankera/front_monitoring#readme",
+  "devDependencies": {
+    "clean-webpack-plugin": "^4.0.0",
+    "html-webpack-plugin": "^5.5.0",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0"
+  },
+  "dependencies": {
+    "user-agent": "^1.0.4"
+  }
+}
