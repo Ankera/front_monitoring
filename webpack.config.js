@@ -11,7 +11,16 @@ module.exports = {
     filename: 'monitor.js'
   },
   devServer: {
-    contentBase: path.resolve(__dirname, 'dist'),
+    port: 3003,
+    static: './dist',
+    onBeforeSetupMiddleware (devServer) {
+      devServer.app.get('/success', (req, res) => {
+        res.json({ id: 1 });
+      });
+      devServer.app.post('/error', (req, res) => {
+        res.sendStatus(500);
+      })
+    }
   },
   plugins: [
     new CleanWebpackPlugin(),

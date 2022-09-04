@@ -6,10 +6,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>前端监控SDK</title>
-  <link rel="stylesheet" href="/sdsd.css">
+  <!-- start 验证 link 错误 -->
+  <!-- <link rel="stylesheet" href="/sdsd.css"> -->
+  <!-- end 验证 link 错误 -->
 </head>
 
-<body>
+<!-- start jsError PromiseError -->
+<!-- <body>
   <div id="container">
     <div class="content">
       <input type="button" value="点击抛出错误" onclick="errorClick()">
@@ -29,6 +32,41 @@
       window.someVal.error3333 = '112233';
       reject('22233')
     })
+  }
+</script> -->
+<!-- end jsError PromiseError -->
+
+
+<body>
+  <div id="container">
+    <div class="content">
+      <input type="button" value="接口成功" onclick="sendSuccess()">
+      <hr />
+      <input type="button" value="接口失败" onclick="sendError()">
+    </div>
+  </div>
+</body>
+<script>
+  function sendSuccess () {
+    let xhr = new XMLHttpRequest();
+
+    xhr.open('GET', '/success', true);
+    xhr.responseType = 'json';
+    xhr.onload = function () {
+      console.log('success', xhr.response);
+    }
+    xhr.send();
+  }
+
+  function sendError () {
+    let xhr = new XMLHttpRequest();
+
+    xhr.open('POST', '/error', true);
+    xhr.responseType = 'json';
+    xhr.error = function (error) {
+      console.log('error', error);
+    }
+    xhr.send("name=zf");
   }
 </script>
 
