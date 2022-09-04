@@ -6,13 +6,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>前端监控SDK</title>
+  <link rel="stylesheet" href="/sdsd.css">
 </head>
 
 <body>
   <div id="container">
     <div class="content">
       <input type="button" value="点击抛出错误" onclick="errorClick()">
-
+      <hr />
       <input type="button" value="点击抛出Promise错误" onclick="promiseClick()">
     </div>
   </div>
@@ -20,11 +21,14 @@
 
 <script>
   function errorClick () {
-    window.someVal.error11 = '112233';
+    window.someVal.error222 = '112233';
   }
 
   function promiseClick () {
-
+    new Promise(function (resolve, reject) {
+      window.someVal.error3333 = '112233';
+      reject('22233')
+    })
   }
 </script>
 

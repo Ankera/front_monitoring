@@ -12,8 +12,15 @@ function getSelector (path) {
   }).join(' ');
 }
 
-export default function (path) {
-  if (Array.isArray(path)) {
-    return getSelector(path);
+export default function (pathOrTarget) {
+  if (Array.isArray(pathOrTarget)) {
+    return getSelector(pathOrTarget);
+  } else if (typeof pathOrTarget === 'object') {
+    const paths = [];
+    while (pathOrTarget) {
+      paths.push(pathOrTarget);
+      pathOrTarget = pathOrTarget.parentNode;
+    }
+    return getSelector(paths);
   }
 }

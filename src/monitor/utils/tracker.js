@@ -10,7 +10,7 @@ const logStoreName = 'sls-log-test-01';
 function getEextraData () {
   return {
     title: document.title,
-    url: location.url,
+    url: location.href,
     timestamp: Date.now(),
     userAgent: userAgent.parse(navigator.userAgent).name
   }
@@ -25,9 +25,10 @@ class SendTracker {
 
   send (data = {}) {
     let extraData = getEextraData();
+    const log = { ...data, ...extraData };
 
     this.xhr.open('POST', this.url, true);
-    const log = { ...data, ...extraData };
+
 
     for (const key in log) {
       if (typeof log[key] === 'number') {
@@ -41,14 +42,13 @@ class SendTracker {
     this.xhr.setRequestHeader('x-log-bodyrawsize', body.length);
     this.xhr.setRequestHeader('Content-Type', 'application/json');
 
-    this.xhr.onload = function () {
-      console.log('ssss', this.xhr.response);
+    this.xhr.onload = () => {
+      console.log('ajax加载结果', this.xhr.response);
     }
 
-    this.xhr.onerror = function (error) {
-      console.log('error', error);
+    this.xhr.onerror = (error) => {
+      console.log('ajax error', error);
     }
-
 
     this.xhr.send(JSON.stringify({
       __logs__: [log]
