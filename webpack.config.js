@@ -17,6 +17,7 @@ module.exports = {
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: './src/index.html',
+      // filename: 'index.html',
       // 打包插入头部 head
       inject: true,
     }),
