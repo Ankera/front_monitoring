@@ -101,9 +101,27 @@
 <body>
   <div id="container">
     <div class="content">
-      performance
+      <button>点我</button>
     </div>
   </div>
 </body>
+<script>
+  // window.addEventListener('load', function () {
+  //   const start = Date.now();
+  //   while (Date.now() - start < 3000) { }
+  // })
+
+  // window.addEventListener('DOMContentLoaded', function () {
+  //   const start = Date.now();
+  //   while (Date.now() - start < 2000) { }
+  // })
+  const content = document.getElementsByClassName('content')[0];
+  setTimeout(function () {
+    const h1 = document.createElement('h1');
+    h1.innerHTML = '页面中意义的元素';
+    h1.setAttribute('elementtiming', 'meaningful');
+    container.appendChild(h1);
+  }, 2000)
+</script>
 
 </html>
