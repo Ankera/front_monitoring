@@ -3,6 +3,12 @@ import onload from '../utils/onload';
 import getSelector from '../utils/getSelector';
 import getLastEvent from '../utils/getLastEvent';
 
+/**
+ * https://juejin.cn/post/7054521713748344869
+ * 
+ * https://juejin.cn/post/7035647196510814221
+ */
+
 export function timing () {
 
   function innerTiming () {
